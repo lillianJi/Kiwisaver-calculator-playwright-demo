@@ -3,15 +3,21 @@
 This automation test framework is built using Playwright, a powerful tool for automating web applications, and Cucumber, a behavior-driven development (BDD) tool that allows you to write tests in a human-readable format.
 This framework enables you to write automated tests for web applications in a structured and maintainable way.
 
-### Built With
+### Background
 
+[**Westpac KiwiSaver Scheme Calculator**](https://www.westpac.co.nz/kiwisaver-investments/kiwisaver/kiwisaver-calculators/kiwisaver-calculator/)
+
+<img src="img/All-questions.png" width="60%">
+
+[//]: # (![Calculator_questions]&#40;Image/All%20questions.png&#41;)
+### Built With
 - [Playwright](https://playwright.dev)
 - [Cucumber](https://cucumber.io/)
 - [JUnit](https://junit.org/junit5/)
 - [Maven](https://maven.apache.org/)
 - [OpenJDK](https://www.openlogic.com/openjdk-downloads)
 
-Top Features:
+### Top Features
 - **Playwright Integration**: Playwright provides a high-level API for automating browsers, enabling you to interact with web elements, perform actions, and verify page content.
 - **Cucumber Integration**: Cucumber allows you to write test scenarios in Gherkin syntax, making them easy to understand by both technical and non-technical stakeholders.
 - **Page Object Model (POM)**: The framework follows the Page Object Model pattern, separating page interactions from test logic for better code organization and maintainability.
@@ -60,6 +66,8 @@ The project follows a standard Maven project structure with the following main d
 - **target**: Contains build artifacts, including test reports and compiled code.
 
 ## Report
+<img src="img/test-report-1.png" width="80%">
+<img src="img/test-report-2.png" width="80%">
 
 ## TODO List
 - More Assertion: add more assertion, i.e "Things to know", the question displaying logic, etc.
