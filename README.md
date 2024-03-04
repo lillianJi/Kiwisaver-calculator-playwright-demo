@@ -71,4 +71,5 @@ The project follows a standard Maven project structure with the following main d
 
 ## TODO List
 - More Assertion: add more assertion, i.e "Things to know", the question displaying logic, etc.
-- More scenarios
+- More scenarios for different employment status
+- The projection calculation rules for all combinations
