@@ -3,6 +3,7 @@ package pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import org.junit.Assert;
 import utils.ConfigReader;
 import utils.WebActions;
 
@@ -24,7 +25,7 @@ public class CalculatorPage {
     private final Locator UNDER_18_MESSAGE_YES_BUTTON;
     private final Locator ABOVE_65_MESSAGE;
     private final Locator ABOVE_65_MESSAGE_CLOSE_BUTTON;
-    private final Locator PROJECTION_TITLE;
+    public final Locator PROJECTION_TITLE;
     private final Locator PROJECTION_TEXT_LOCATOR;
 
 
@@ -129,6 +130,7 @@ public class CalculatorPage {
     }
 
     public boolean isProjectionDisplayed(){
+        WebActions.waitUntilElementDisplayed(this.PROJECTION_TITLE,4000);
         return this.PROJECTION_TITLE.isVisible();
     }
 

@@ -70,6 +70,6 @@ The project follows a standard Maven project structure with the following main d
 <img src="img/test-report-2.png" width="80%">
 
 ## TODO List
+- The projection calculation rules for all combinations, to be able to verify different variations
 - More Assertion: add more assertion, i.e "Things to know", the question displaying logic, etc.
 - More scenarios for different employment status
-- The projection calculation rules for all combinations

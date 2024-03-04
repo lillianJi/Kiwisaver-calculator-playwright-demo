@@ -90,8 +90,8 @@ public class CalculatorSteps {
 
     @Then("It should show user the projection for growth correctly")
     public void itShouldShowUserTheProjectionForGrowthCorrectly() {
-//        Assert.assertTrue(calculatorPage.isProjectionDisplayed());
-        //calculate the value for projection
+        Assert.assertTrue(calculatorPage.isProjectionDisplayed());
+        //TODO calculate the value for projection
         if (testContext.savingPurpose.equals("First Home")){
             String withDrawAmount = "89";
             String retirementIncome = "1";
@@ -107,7 +107,6 @@ public class CalculatorSteps {
                     " p.w if you were to retire at 65. This income would last you until age 90 and is not including NZ Super.";
 //            Assert.assertEquals(retirementProjectText,calculatorPage.getTextOfProjection());
         }
-
     }
 
     @Then("It should pop up we are here to help message")
