@@ -2,7 +2,6 @@ package factory;
 
 import com.microsoft.playwright.*;
 import utils.ConfigReader;
-import utils.WebActions;
 
 public class DriverFactory {
     public Browser browser;
@@ -13,10 +12,12 @@ public class DriverFactory {
     public static ThreadLocal<Page> threadLocalDriver = new ThreadLocal<>();
     public static ThreadLocal<BrowserContext> threadLocalContext = new ThreadLocal<>();
 
-    //Launches Browser as set by user in config file
+    /**
+     * Launches Browser
+     */
     public Page initDriver(String browserName) {
         BrowserType browserType = null;
-        boolean headless = Boolean.valueOf(ConfigReader.getProperty("headless"));
+        boolean headless = Boolean.parseBoolean(ConfigReader.getProperty("headless"));
         switch (browserName) {
             case "firefox":
                 browserType = Playwright.create().firefox();
@@ -41,12 +42,19 @@ public class DriverFactory {
         return page;
     }
 
+    /**
+     *    Return Initialized Thread Local Driver
+      */
     public static synchronized Page getPage() {
-        return threadLocalDriver.get(); // Will return Initialized Thread Local Driver
+        return threadLocalDriver.get();
     }
 
+    /**
+     *  Return Initialized Thread Local Context
+      */
+
     public static synchronized BrowserContext getContext() {
-        return threadLocalContext.get(); // Will return Initialized Thread Local Context
+        return threadLocalContext.get();
     }
 
 }

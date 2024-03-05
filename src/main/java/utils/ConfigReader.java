@@ -6,7 +6,9 @@ import java.util.Properties;
 public class ConfigReader {
     private Properties properties;
 
-    //This is used to raed from properties files and returns properties object
+    /**
+     *  This is used to raed from properties files and returns properties object
+     */
     public Properties initProp() {
         properties = new Properties();
         try {

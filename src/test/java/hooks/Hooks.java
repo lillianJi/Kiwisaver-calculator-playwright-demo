@@ -7,8 +7,6 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import utils.ConfigReader;
-import utils.WebActions;
-
 import java.nio.file.Paths;
 
 public class Hooks {
@@ -17,9 +15,11 @@ public class Hooks {
 
     @Before
     public void launchBrowser() {
-        String browserName = ConfigReader.getProperty("browser");  //Fetching browser value from config file
+        //Fetching browser value from config file
+        String browserName = ConfigReader.getProperty("browser");
         driverFactory = new DriverFactory();
-        page = driverFactory.initDriver(browserName); // Passing browser name to launch the browser
+        // Passing browser name to launch the browser
+        page = driverFactory.initDriver(browserName);
     }
 
     //After runs in reverse order so order=1 will run first
@@ -31,9 +31,11 @@ public class Hooks {
     @After(order = 1)
     public void takeScreenshotAndTrace(Scenario scenario) {
         if (scenario.isFailed()) {
-            String screenshotName = scenario.getName().replaceAll("", "_"); //Replace all space in scenario name with underscore
+            //Replace all space in scenario name with underscore
+            String screenshotName = scenario.getName().replaceAll("", "_");
             byte[] sourcePath = page.screenshot();
-            scenario.attach(sourcePath, "image/png", screenshotName);  //Attach screenshot to report if scenario fails
+            //Attach screenshot to report if scenario fails
+            scenario.attach(sourcePath, "image/png", screenshotName);
             DriverFactory.context.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("target/" + screenshotName + ".zip")));
         }
     }

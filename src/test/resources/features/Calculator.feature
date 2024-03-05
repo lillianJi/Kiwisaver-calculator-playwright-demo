@@ -1,10 +1,10 @@
-@smoke
+@smoke @regression
 Feature: Verify projection for growth after answer all questions
 
   Scenario Outline: The user who is under 65 and Employed wants to use KiwiSaver for first home
     Given user navigates to "calculatorUrl"
     Then user opens the calculator
-    When user enters their "<age>"
+    When user enters their age "<age>"
     And user uses KiwiSaver savings for "First Home"
     And user expects to purchase first home in "<numberOfYear>" years
     And user is "Employed"
@@ -23,7 +23,7 @@ Feature: Verify projection for growth after answer all questions
   Scenario Outline: The user who is under 65 and Employed wants to use KiwiSaver for retirement
     Given user navigates to "calculatorUrl"
     Then user opens the calculator
-    When user enters their "<age>"
+    When user enters their age "<age>"
     And user uses KiwiSaver savings for "Retirement"
     And user is "Employed"
     And user enter "<income>" with "<frequency>"
@@ -40,5 +40,5 @@ Feature: Verify projection for growth after answer all questions
   Scenario: The user who is above 65
     Given user navigates to "calculatorUrl"
     Then user opens the calculator
-    When user enters their "66"
+    When user enters their age "66"
     Then It should pop up we are here to help message

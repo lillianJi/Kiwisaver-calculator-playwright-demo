@@ -1,14 +1,6 @@
 package utils;
 
 import com.microsoft.playwright.Locator;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Base64;
-import java.util.Properties;
 
 public abstract class WebActions {
 

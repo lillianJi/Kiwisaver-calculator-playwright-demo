@@ -23,7 +23,7 @@ public class CalculatorSteps {
         calculatorPage.openTheCalculator();
     }
 
-    @When("user enters their \"([^\"]*)\"$")
+    @When("user enters their age \"([^\"]*)\"$")
     public void userEnterInFirstQuestion(String age) {
         testContext.setAge(age);
         calculatorPage.inputAgeAndGoToNextQuestion(age);
@@ -66,7 +66,6 @@ public class CalculatorSteps {
         calculatorPage.enterIncomeWithFrequency(income, incomeFrequency);
         //TODO assert Things to know
     }
-
 
     @And("user enters current KiwiSaver {string}")
     public void userEntersCurrentKiwiSaverBalance(String balance) {
